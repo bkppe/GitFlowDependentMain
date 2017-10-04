@@ -1,14 +1,23 @@
 package edu.berkeley.path.hellosomebody;
 
-import static org.junit.jupiter.api.Assertions.*;
+import edu.berkeley.path.somebody.Someone;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * Created by brian on 10/3/17.
  */
-class HelloTest {
-    Hello myTester = new Hello();
-    Result result = JunitCore.runClasses(Hello.class);
-    assertTrue("Correct message", result == "Hello brian");
+public class HelloTest {
+
+    @Test
+    public void testResult()
+    {
+        Hello myTester = new Hello();
+        Someone messageTarget = new Someone();
+        String result = Hello.printTarget(messageTarget);
+        assertTrue("Correct message", result == "brian");
+    }
+
 
 
 }
